@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Laura I. Estremera — Thank You</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6EEE0;
+    --paper-deep:#EEE1C8;
+    --burgundy:#6E1E32;
+    --burgundy-dark:#48121F;
+    --sage:#6F8F6B;
+    --sage-dark:#4C6A49;
+    --ink:#2B2320;
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+
+  body{
+    background:var(--paper);
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(111,143,107,0.10), transparent 40%),
+      radial-gradient(circle at 88% 92%, rgba(110,30,50,0.08), transparent 45%);
+    color:var(--ink);
+    font-family:'Inter', system-ui, sans-serif;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+    position:relative;
+    overflow-x:hidden;
+  }
+
+  .wrap{
+    width:100%;
+    max-width:700px;
+    position:relative;
+  }
+
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--sage-dark);
+    text-align:center;
+    margin-bottom:14px;
+  }
+
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-style:italic;
+    font-size:clamp(30px, 5.2vw, 46px);
+    line-height:1.14;
+    text-align:center;
+    color:var(--burgundy);
+    margin:0 0 10px 0;
+  }
+
+  .tagline{
+    font-family:'Fraunces', serif;
+    font-optical-sizing:auto;
+    font-weight:500;
+    font-size:16px;
+    text-align:center;
+    color:var(--sage-dark);
+    margin:0 0 36px 0;
+    letter-spacing:0.01em;
+  }
+
+  /* vine on the left  into circuit trace on the right */
+  .divider{ width:100%; height:34px; margin:0 0 36px 0; }
+  .divider svg{ width:100%; height:100%; overflow:visible; }
+  .vine-path{
+    fill:none;
+    stroke:var(--sage);
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-dasharray:620;
+    stroke-dashoffset:620;
+    animation:draw 2.1s ease forwards 0.2s;
+  }
+  .circuit-path{
+    fill:none;
+    stroke:var(--burgundy);
+    stroke-width:1.6;
+    stroke-linecap:square;
+    stroke-dasharray:420;
+    stroke-dashoffset:420;
+    animation:draw 1.6s ease forwards 1.3s;
+  }
+  .divider .node{ fill:var(--burgundy); opacity:0; animation:appear 0.4s ease forwards 2.6s; }
+  .divider .leaf{ fill:var(--sage); opacity:0; animation:appear 0.4s ease forwards 0.6s; }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  @keyframes appear{ to{ opacity:1; } }
+  @media (prefers-reduced-motion: reduce){
+    .vine-path, .circuit-path{ animation:none; stroke-dashoffset:0; }
+    .divider .node, .divider .leaf{ animation:none; opacity:1; }
+  }
+
+  .body-text{
+    font-size:15.5px;
+    line-height:1.75;
+    color:var(--ink);
+    text-align:center;
+    max-width:52ch;
+    margin:0 auto 40px auto;
+  }
+  .body-text strong{ color:var(--burgundy); font-weight:600; }
+
+  .chips{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin:0 0 42px 0;
+  }
+  .chip{
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.02em;
+    color:var(--burgundy-dark);
+    border:1px solid rgba(110,30,50,0.28);
+    padding:7px 12px;
+    border-radius:999px;
+    background:rgba(110,30,50,0.05);
+  }
+
+  /* flip card */
+  .flip-zone{
+    display:flex;
+    justify-content:center;
+    margin-bottom:40px;
+  }
+  .flip-card{
+    width:280px;
+    height:190px;
+    perspective:1200px;
+    cursor:pointer;
+  }
+  .flip-card-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transition:transform 0.7s cubic-bezier(0.4,0.2,0.2,1);
+    transform-style:preserve-3d;
+  }
+  .flip-card.is-flipped .flip-card-inner,
+  .flip-card:hover .flip-card-inner{
+    transform:rotateY(180deg);
+  }
+  .flip-card-front, .flip-card-back{
+    position:absolute;
+    inset:0;
+    backface-visibility:hidden;
+    border-radius:8px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 6px 20px rgba(43,35,32,0.14);
+  }
+  .flip-card-front{
+    background:var(--burgundy);
+    color:var(--paper);
+  }
+  .flip-card-front .front-label{
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    opacity:0.75;
+    margin-bottom:10px;
+  }
+  .flip-card-front .front-name{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:22px;
+  }
+  .flip-card-front .front-hint{
+    font-family:'Space Mono', monospace;
+    font-size:10px;
+    opacity:0.65;
+    margin-top:14px;
+  }
+  .flip-card-back{
+    background:var(--paper-deep);
+    color:var(--ink);
+    transform:rotateY(180deg);
+    border:1px solid rgba(110,30,50,0.2);
+    gap:8px;
+  }
+  .flip-card-back .back-label{
+    font-family:'Space Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--sage-dark);
+    margin-bottom:6px;
+  }
+  .flip-card-back a{
+    color:var(--ink);
+    text-decoration:none;
+    font-size:14px;
+    border-bottom:1px dotted var(--burgundy);
+  }
+  .flip-card-back a:hover{ color:var(--burgundy); }
+  .flip-card-back .loc{ font-size:13px; color:var(--sage-dark); margin-top:4px; }
+
+  .cta-zone{
+    display:flex;
+    justify-content:center;
+    margin-bottom:8px;
+  }
+  .connect-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    font-size:14.5px;
+    color:var(--paper);
+    background:var(--burgundy);
+    text-decoration:none;
+    padding:14px 26px;
+    border-radius:4px;
+    transition:transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+  }
+  .connect-btn:hover{
+    background:var(--sage-dark);
+    transform:translateY(-2px);
+    box-shadow:0 10px 22px rgba(76,106,73,0.28);
+  }
+  .connect-btn:focus-visible{
+    outline:2px solid var(--sage-dark);
+    outline-offset:3px;
+  }
+  .connect-btn svg{ width:16px; height:16px; flex-shrink:0; }
+
+  .foot-note{
+    text-align:center;
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    color:var(--sage-dark);
+    opacity:0.75;
+    margin-top:14px;
+  }
+
+  /* cursor leaf trail */
+  .leaf-particle{
+    position:fixed;
+    pointer-events:none;
+    z-index:999;
+    will-change:transform, opacity;
+  }
+
+  @media (max-width:520px){
+    .flip-card{ width:100%; max-width:280px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="eyebrow">Thank you · Gracias</div>
+  <h1>Thank you for your consideration.</h1>
+  <p class="tagline">Innovating at the intersection of art and science.</p>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 700 34" preserveAspectRatio="none">
+      <path class="vine-path" d="M0,17 C40,4 70,30 110,17 S180,4 220,17 S290,30 330,17" />
+      <ellipse class="leaf" cx="60" cy="9" rx="6" ry="3" transform="rotate(-30 60 9)" />
+      <ellipse class="leaf" cx="150" cy="25" rx="6" ry="3" transform="rotate(25 150 25)" />
+      <ellipse class="leaf" cx="270" cy="9" rx="6" ry="3" transform="rotate(-20 270 9)" />
+      <path class="circuit-path" d="M330,17 L370,17 L370,6 L410,6 L410,17 L450,17 L450,28 L490,28 L490,17 L530,17 L530,6 L570,6 L570,17 L620,17 L620,17 L700,17" />
+      <circle class="node" cx="410" cy="6" r="3.2" />
+      <circle class="node" cx="490" cy="28" r="3.2" />
+      <circle class="node" cx="570" cy="6" r="3.2" />
+    </svg>
+  </div>
+
+  <p class="body-text">
+    My work sits between two worlds that don't usually share a desk: <strong>science</strong> and <strong>the arts</strong>. Six peer-reviewed publications in network and wireless security, alongside degrees in Spanish and digital arts with  the same curiosity driving both.
+  </p>
+
+  <div class="chips">
+    <span class="chip">Cybersecurity Research</span>
+    <span class="chip">Computer Science</span>
+    <span class="chip">Digital Arts</span>
+    <span class="chip">Bilingual · EN / ES</span>
+  </div>
+
+  <div class="flip-zone">
+    <div class="flip-card" id="contactCard" tabindex="0" role="button" aria-label="Flip to reveal contact details">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <span class="front-label">Let's stay in touch</span>
+          <span class="front-name">Laura I. Estremera</span>
+        </div>
+        <div class="flip-card-back">
+          <span class="back-label">Contact</span>
+          <a href="mailto:liestremera26@gmail.com">liestremera26@gmail.com</a>
+          <a href="tel:3366023684">336.602.3684</a>
+          <span class="loc">Wilmington, NC · Research Triangle</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-zone">
+    <a class="connect-btn" href="https://www.linkedin.com/in/laura-i-estremera-974375282/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+      Connect on LinkedIn
+    </a>
+  </div>
+
+</div>
+
+<script>
+  // Flip card: tap-to-flip for touch devices (hover already handles desktop)
+  const card = document.getElementById('contactCard');
+  card.addEventListener('click', () => card.classList.toggle('is-flipped'));
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      card.classList.toggle('is-flipped');
+    }
+  });
+
+  // Cursor leaf trail — subtle, capped, desktop-only, respects reduced motion
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (canHover && !reduceMotion) {
+    const leafSVG = `<svg width="14" height="14" viewBox="0 0 14 14"><path d="M1,13 C1,7 4,1 13,1 C13,7 10,13 1,13 Z" fill="#6F8F6B" opacity="0.55"/></svg>`;
+    let lastSpawn = 0;
+    let activeLeaves = 0;
+    const MAX_LEAVES = 10;
+
+    window.addEventListener('mousemove', (e) => {
+      const now = Date.now();
+      if (now - lastSpawn < 90 || activeLeaves >= MAX_LEAVES) return;
+      lastSpawn = now;
+      activeLeaves++;
+
+      const leaf = document.createElement('div');
+      leaf.className = 'leaf-particle';
+      leaf.innerHTML = leafSVG;
+      leaf.style.left = (e.clientX - 7) + 'px';
+      leaf.style.top = (e.clientY - 7) + 'px';
+      leaf.style.transform = `rotate(${Math.random() * 360}deg)`;
+      document.body.appendChild(leaf);
+
+      const driftX = (Math.random() - 0.5) * 30;
+      const driftY = 24 + Math.random() * 20;
+      const rotateEnd = (Math.random() - 0.5) * 180;
+
+      leaf.animate([
+        { transform: leaf.style.transform + ' translate(0,0)', opacity: 0.7 },
+        { transform: `rotate(${rotateEnd}deg) translate(${driftX}px, ${driftY}px)`, opacity: 0 }
+      ], { duration: 900, easing: 'ease-out' }).onfinish = () => {
+        leaf.remove();
+        activeLeaves--;
+      };
+    });
+  }
+</script>
+
+</body>
+</html>
